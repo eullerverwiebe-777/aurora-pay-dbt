@@ -13,3 +13,5 @@ select
     status 
  
 from fonte
+
+qualify row_number() over (partition by chargeback_id order by data_abertura) = 1 
